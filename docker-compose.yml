@@ -91,7 +91,7 @@ services:
     command: init run server
     labels:
       - traefik.enable=true
-      - traefik.http.services.cvat.loadbalancer.server.port=8080
+      - traefik.http.services.cvat.loadbalancer.server.port=8081:8080
       - traefik.http.routers.cvat.rule=Host(`${CVAT_HOST:-localhost}`) &&
         PathPrefix(`/api/`, `/static/`, `/admin`, `/documentation/`, `/django-rq`)
       - traefik.http.routers.cvat.entrypoints=web
